@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Library {
 
 	private ArrayList<Items> items = new ArrayList<>();
+	private ArrayList<Person> people = new ArrayList<>();
 
 	public void addItem(Items item) {
 		items.add(item);
