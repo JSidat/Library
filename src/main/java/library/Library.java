@@ -33,13 +33,14 @@ public class Library {
 		}
 	}
 
-	public String checkInItem(int id) {
+	public Boolean checkInItem(int id) {
 		for (Items item : items) {
 			if (item.getId() == id && item.getIsAvailable() == false && items.contains(item)) {
 				item.setAvailable(true);
-			}
+				System.out.println("Thank you for returning the item.");
+				return false;
 		}
-		return "Thank you for returning this item";
+		return true;
 	}
 
 	public Boolean checkOutItem(int id) {
@@ -49,6 +50,7 @@ public class Library {
 				item.setAvailable(false);
 			} else {
 				System.out.println("Sorry, item is not currently available");
+				return false;
 			}
 		}
 		return true;
