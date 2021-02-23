@@ -1,10 +1,10 @@
 package library;
 
-public class Maps extends Items {
+public class Map extends Items {
 
 	private String region;
 
-	public Maps(String itemType, String title, int numOfPages, boolean isAvailable, String region) {
+	public Map(String itemType, String title, int numOfPages, boolean isAvailable, String region) {
 		super(itemType, title, numOfPages, isAvailable);
 		this.region = region;
 	}

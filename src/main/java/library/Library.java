@@ -7,8 +7,12 @@ public class Library {
 	private ArrayList<Items> items = new ArrayList<>();
 	private ArrayList<Person> people = new ArrayList<>();
 
+	private int itemID = 1;
+	private int personID = 1;
+
 	public void addPerson(Person person) {
 		if (people.contains(person) == false) {
+			person.setId(personID++);
 			people.add(person);
 		}
 	}
@@ -18,6 +22,7 @@ public class Library {
 	}
 
 	public void addItem(Items item) {
+		item.setId(itemID++);
 		items.add(item);
 	}
 
@@ -33,20 +38,21 @@ public class Library {
 	public String checkInItem(int id) {
 		for (Items item : items) {
 			if (item.getId() == id && item.getIsAvailable() == false && items.contains(item)) {
-				addItem(item);
 				item.setAvailable(true);
 			}
 		}
 		return "Thank you for returning this item";
 	}
 
-	public String checkOutItem(int id) {
+	public Boolean checkOutItem(int id) {
 		for (Items item : items) {
-			if (item.getId() == id && item.getIsAvailable() == true && items.contains(item)) {
-				removeItem(id);
+			if (item.getId() == id && item.getIsAvailable()) {
+				System.out.println("Thank you for taking this item out, enjoy!");
 				item.setAvailable(false);
+			} else {
+				System.out.println("Sorry, item is not currently available");
 			}
 		}
-		return "Thank you for taking this item out, enjoy!";
+		return true;
 	}
 }

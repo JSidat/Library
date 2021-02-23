@@ -1,10 +1,10 @@
 package library;
 
-public class Magazines extends Items {
+public class Magazine extends Items {
 
 	private String publisher;
 
-	public Magazines(String itemType, String title, int numOfPages, boolean isAvailable, String publisher) {
+	public Magazine(String itemType, String title, int numOfPages, boolean isAvailable, String publisher) {
 		super(itemType, title, numOfPages, isAvailable);
 		this.publisher = publisher;
 	}
