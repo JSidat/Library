@@ -11,10 +11,8 @@ public class Library {
 	private int personID = 1;
 
 	public void addPerson(Person person) {
-		if (people.contains(person) == false) {
-			person.setId(personID++);
-			people.add(person);
-		}
+		person.setId(personID++);
+		people.add(person);
 	}
 
 	public void removePerson(Person person) {
