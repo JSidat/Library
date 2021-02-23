@@ -9,6 +9,10 @@ public class Maps extends Items {
 		this.region = region;
 	}
 
+	public String findLocation() {
+		return "checking map to find location";
+	}
+
 	public String getRegion() {
 		return region;
 	}

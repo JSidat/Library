@@ -7,6 +7,16 @@ public class Library {
 	private ArrayList<Items> items = new ArrayList<>();
 	private ArrayList<Person> people = new ArrayList<>();
 
+	public void addPerson(Person person) {
+		if (people.contains(person) == false) {
+			people.add(person);
+		}
+	}
+
+	public void removePerson(Person person) {
+		people.remove(person);
+	}
+
 	public void addItem(Items item) {
 		items.add(item);
 	}
