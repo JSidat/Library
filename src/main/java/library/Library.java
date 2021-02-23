@@ -21,9 +21,9 @@ public class Library {
 
 	public String checkInItem(int id) {
 		for (Items item : items) {
-			if (item.getId() == id && item.getIsAvailable() == false) {
+			if (item.getId() == id && item.getIsAvailable() == false && items.contains(item)) {
+				addItem(item);
 				item.setAvailable(true);
-
 			}
 		}
 		return "Thank you for returning this item";
@@ -31,7 +31,8 @@ public class Library {
 
 	public String checkOutItem(int id) {
 		for (Items item : items) {
-			if (item.getId() == id && item.getIsAvailable() == true) {
+			if (item.getId() == id && item.getIsAvailable() == true && items.contains(item)) {
+				removeItem(id);
 				item.setAvailable(false);
 			}
 		}
